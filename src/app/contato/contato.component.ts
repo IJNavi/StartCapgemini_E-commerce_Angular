@@ -12,7 +12,7 @@ formContato = this.fb.group({
     Validators.minLength(4),
     Validators.required
   ]],
-  assuntos: ["", [
+  assunto: ["", [
     Validators.minLength(10),
     Validators.required
   ]],
@@ -39,9 +39,23 @@ formContato = this.fb.group({
   ngOnInit(): void {
   }
 
-  enviarFormulario() {
-    alert("A mensagem foi enviada!");
-    this.formContato.reset();
-  }
+ // enviarFormulario() {
+ //   alert("A mensagem foi enviada!");
+ //   this.formContato.reset();
+ // }
 
+
+
+  enviarFormulario() {
+    if (this.formContato.valid) {
+        alert("A mensagem foi enviada!");
+        this.formContato.reset();
+        
+        // Opcional: marcar todos os campos como "não tocados" após reset
+        Object.keys(this.formContato.controls).forEach(key => {
+            this.formContato.get(key)?.markAsUntouched();
+            this.formContato.get(key)?.markAsPristine();
+        });
+    }
+  }
 }
