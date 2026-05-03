@@ -9,7 +9,7 @@
                 Quantidade:
                 <input type="number" [(ngModel)]="itemCarrinho.quantidade" (change)="calculaTotal()">
             </label>
-            <button class="remove-button" (click)="removerProdutoCarrinho(itemCarrinho.id)"><i class="fa-solid fa-xmark"></i></button>
+            <button class="remove-button" (click)="removerProdutoCarrinho(itemCarrinho.id, itemCarrinho.descricao)"><i class="fa-solid fa-xmark"></i></button>
         </li>
     </ul>
     <h2 class="cart-total">Total: {{ total | currency: "BRL" }}</h2>
