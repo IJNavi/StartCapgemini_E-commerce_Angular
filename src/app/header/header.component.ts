@@ -7,6 +7,8 @@ import { CarrinhoService } from '../carrinho.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  
+  menuAberto: boolean = false;
 
   constructor(
     public carrinhoService: CarrinhoService
@@ -15,4 +17,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleMenu() {
+    this.menuAberto = !this.menuAberto;
+    // Previne scroll da página quando menu está aberto
+    if (this.menuAberto) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  fecharMenu() {
+    this.menuAberto = false;
+    document.body.style.overflow = '';
+  }
 }

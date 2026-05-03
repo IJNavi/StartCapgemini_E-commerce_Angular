@@ -1,26 +1,34 @@
 <header class="main-header">
+    <!-- Botão do menu hambúrguer -->
+    <button class="menu-toggle" (click)="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
     <h1 class="main-header__title">
         <span class="main-header__title--blue">ProWay</span>
         <span class="main-header__title--orange">Computers</span>
     </h1>
     
-    <div class="container-menu">
+    <!-- Overlay para fechar ao clicar fora -->
+    <div class="menu-overlay" [class.active]="menuAberto" (click)="fecharMenu()"></div>
+    
+    <div class="container-menu" [class.active]="menuAberto">
         <nav class="main-header__menu">
             <ul>
                 <li>
-                    <a routerLink="/produtos">Produtos</a>
+                    <a routerLink="/produtos" (click)="fecharMenu()">Produtos</a>
                 </li>
                 <li>
-                    <a routerLink="/carrinho">
+                    <a routerLink="/carrinho" (click)="fecharMenu()">
                         <i class="fa-solid fa-cart-shopping"></i> Carrinho
                         <span class="badge-carrinho">{{ carrinhoService.obterCarrinho().length }}</span>
                     </a>
                 </li>
-                <li><a routerLink="/contato">Contatos</a></li>
-                <li><a href="https://www.facebook.com/capgeminibrasil/?locale=pt_BR" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://www.instagram.com/capgeminibr/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
-                <li><a href="https://www.threads.com/@capgemini" target="_blank" aria-label="Threads"><i class="fa-brands fa-threads"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/capgemini/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a routerLink="/contato" (click)="fecharMenu()">Contatos</a></li>
+                <li><a href="https://www.facebook.com/capgeminibrasil/?locale=pt_BR" target="_blank" (click)="fecharMenu()"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com/capgeminibr/" target="_blank" (click)="fecharMenu()"><i class="fa-brands fa-square-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.threads.com/@capgemini" target="_blank" (click)="fecharMenu()"><i class="fa-brands fa-threads"></i> Threads</a></li>
+                <li><a href="https://www.linkedin.com/company/capgemini/posts/?feedView=all" target="_blank" (click)="fecharMenu()"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></li>
             </ul>
         </nav>
     </div>
