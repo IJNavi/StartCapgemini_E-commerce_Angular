@@ -1,46 +1,27 @@
 .main-header {    
-    padding: 10px 0px;
+    padding: 10px 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    column-gap: 40px;
+    column-gap: 20px;
+    row-gap: 15px;
 }
 
 .main-header__title {    
     font-size: 80px;
-    letter-spacing: -1.5px;    
+    letter-spacing: -1.5px;
+    margin: 0;
 }
 
 .main-header__title--blue {
     color: var(--blue);
-    color: blue;
-    font-size:60px;
+    font-size: 60px;
 }
 
 .main-header__title--orange {
     color: var(--orange);
-    color: orange;
-    font-size:60px;
-}
-
-.main-header__menu ul {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.main-header__menu a {
-    padding: 5px 5px;
-    color: var(--gray);
-    font-weight: 400;
-    font-size: 20px;
-    text-decoration: none;
-    transition: all .3s ease-in-out;
-}
-
-.main-header__menu a:hover {
-    background-color: var(--blue);
-    color: #fff;
+    font-size: 60px;
 }
 
 .container-menu {
@@ -50,10 +31,121 @@
     flex: 1;
 }
 
-.badge-carrinho {
-    background-color: var(--dark-blue);
-    padding: 0px 2px;
-    border-radius: 1px;
-    color: white;
+.main-header__menu ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
+.main-header__menu a {
+    padding: 8px 10px;
+    color: var(--gray);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+}
+
+.main-header__menu a:hover {
+    background-color: var(--blue);
+    color: #fff;
+}
+
+.badge-carrinho {
+    background-color: var(--dark-blue);
+    padding: 0px 4px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* ✅ MEDIA QUERY PARA TABLETS */
+@media (max-width: 1024px) {
+    .main-header__title {
+        font-size: 60px;
+    }
+    
+    .main-header__title--blue,
+    .main-header__title--orange {
+        font-size: 45px;
+    }
+    
+    .main-header__menu a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+
+/* ✅ MEDIA QUERY PARA CELULARES (principal correção) */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .main-header__title {
+        font-size: 40px;
+    }
+    
+    .main-header__title--blue,
+    .main-header__title--orange {
+        font-size: 30px;
+    }
+    
+    .container-menu {
+        width: 100%;
+    }
+    
+    .main-header__menu ul {
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .main-header__menu a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    /* Ajuste para ícones sociais */
+    .main-header__menu a i {
+        font-size: 14px;
+    }
+    
+    /* Ajuste do componente de busca */
+    app-barra-pesquisa {
+        width: 100%;
+    }
+}
+
+/* ✅ MEDIA QUERY PARA CELULARES PEQUENOS */
+@media (max-width: 480px) {
+    .main-header__title {
+        font-size: 28px;
+    }
+    
+    .main-header__title--blue,
+    .main-header__title--orange {
+        font-size: 22px;
+    }
+    
+    .main-header__menu ul {
+        gap: 5px;
+    }
+    
+    .main-header__menu a {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+    
+    .badge-carrinho {
+        font-size: 10px;
+        padding: 0px 3px;
+    }
+}

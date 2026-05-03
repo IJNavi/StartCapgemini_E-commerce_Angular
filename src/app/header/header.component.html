@@ -1,7 +1,9 @@
 <header class="main-header">
     <h1 class="main-header__title">
-        <span class="main-header__title--blue">ProWay</span><span class="main-header__title--orange">Computers</span>
+        <span class="main-header__title--blue">ProWay</span>
+        <span class="main-header__title--orange">Computers</span>
     </h1>
+    
     <div class="container-menu">
         <nav class="main-header__menu">
             <ul>
@@ -10,17 +12,18 @@
                 </li>
                 <li>
                     <a routerLink="/carrinho">
-                        <i class="fa-solid fa-cart-shopping"></i>Carrinho
+                        <i class="fa-solid fa-cart-shopping"></i> Carrinho
                         <span class="badge-carrinho">{{ carrinhoService.obterCarrinho().length }}</span>
                     </a>
                 </li>
                 <li><a routerLink="/contato">Contatos</a></li>
-                <li><a href="https://www.facebook.com/capgeminibrasil/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="https://www.instagram.com/capgeminibr/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a></li>
-                <li><a href="https://www.threads.com/@capgemini" target="_blank"><i class="fa-brands fa-threads"></i></a></li>
-                <li><a href="https://www.linkedin.com/company/capgemini/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.facebook.com/capgeminibrasil/?locale=pt_BR" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/capgeminibr/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="https://www.threads.com/@capgemini" target="_blank" aria-label="Threads"><i class="fa-brands fa-threads"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/capgemini/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
             </ul>
         </nav>
     </div>
+    
     <app-barra-pesquisa></app-barra-pesquisa>
 </header>
